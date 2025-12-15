@@ -1,0 +1,100 @@
+
+@use './mixin-layout.scss' as mixin;
+@use './colors.scss' as colors;
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+@mixin typeface-1($size, $device){
+    @if $size == h1 and $device == desktop{
+        font-family: 'Anton', sans-serif;
+        font-size: 95px;
+        font-weight: 400;    
+    } @else if $size == h1 and $device == mobile{
+        font-size: 70px;
+    }
+
+    @else if $size == h2 and $device == desktop{
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: 900;
+    } @else if $size == h2 and $device == mobile{
+        font-size: 27px;
+    }
+
+    @else if $size == h3 and $device == desktop{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+    }
+}
+
+@mixin paragraph ($size: p1, $device){
+    @if $size == p1 and $device == desktop{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 400;
+    } @else if $size == p1 and $device == mobile {
+        font-size: 16px;
+    }
+}
+
+
+
+h1{
+    color: colors.$white-medium;
+    @include typeface-1(h1, desktop);
+    @include mixin.responsive(mobile){
+        @include typeface-1(h1, mobile);
+    }
+}
+
+h2{
+    color: colors.$dark-blue;
+    @include typeface-1(h2, desktop);
+    @include mixin.responsive(mobile){
+        @include typeface-1(h2, mobile);
+    }
+}
+
+h3{
+    color:  #1f2937;
+    @include typeface-1(h3, desktop);
+}
+
+p{
+    @include paragraph(p1, desktop);
+    @include mixin.responsive(mobile){
+        @include paragraph(p1, mobile);
+    }
+}
+
+a{
+    font-family: 'Inter', sans-serif;
+    color: colors.$white-medium;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: color 0.3s ease-in-out;
+
+    &:hover{
+        color: colors.$dark-orange;
+    }
+}
+
+
+@font-face{
+    font-family: 'DrukTextWide';
+    src: url('../../public/assets/font/DrukTextWideBoldTrial.otf') format('otf'),
+    url('../../public/assets/font/DrukTextWideBoldTrial.otf') format('woff');
+}
+
+h6{
+    font-family: 'DrukTextWide';
+    font-size: 50px;
+    font-weight: 400;
+    
+}

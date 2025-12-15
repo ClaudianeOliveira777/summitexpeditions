@@ -1,0 +1,159 @@
+@use "../../styles/colors.scss" as colors;
+@use "../../styles/mixin-layout.scss" as mixin;
+
+.slider-container {
+    position: relative;
+   
+    
+    .slick-slider {
+        height: 85vh !important;
+        
+        @include mixin.responsive(mobile) {
+            height: 55vh !important;
+        }
+    }
+    
+    .slick-list, .slick-track {
+        height: 100% !important;
+    }
+}
+
+.slide-content {
+    height: 85vh !important;
+    background-position: center !important;
+    background-size: cover !important;
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+    
+    // Sombra apenas na parte inferior
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 10%;
+        right: 10%;
+        height: 20px;
+        background: rgb(255, 255, 255);
+        border-radius: 50%;
+        filter: blur(15px);
+        z-index: -1;
+    }
+    
+    // Sombra sutil em todo o elemento
+    box-shadow: 0 5px 15px rgb(255, 251, 251);
+    
+    @include mixin.responsive(mobile) {
+        height: 55vh !important;
+        
+        &::after {
+            bottom: -15px;
+            left: 5%;
+            right: 5%;
+            height: 15px;
+            filter: blur(10px);
+        }
+    }
+}
+
+.tour-title {
+    letter-spacing: 5px; 
+}
+
+.slide-caption {
+    padding-left: 90px;
+    position: relative;
+    z-index: 2;
+}
+
+.tour-title, 
+.tour-description {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+// Animação quando o slide está ativo
+.slick-active {
+    .tour-title {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.5s;
+    }
+
+    .tour-description {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.9s;
+    }
+}
+
+.tour-description {
+    color: colors.$white-medium;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.arrow-btn {
+    position: absolute;
+    z-index: 90;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transform: translateY(-50%);
+    
+    &:hover {
+        transform: translateY(-50%) scale(1.2);
+    }
+    
+    img {
+        width: 40px;
+        height: 40px;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+    
+    @include mixin.responsive(mobile) {
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.hero-prev {
+    left: 16px;
+    
+    @include mixin.responsive(mobile) {
+        left: 16px;
+        bottom: 20px;
+        top: auto;
+        transform: none;
+        
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.hero-next {
+    right: 16px;
+    
+    @include mixin.responsive(mobile) {
+        right: 20px;
+        bottom: 20px;
+        top: auto;
+        transform: none;
+        
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+// Remove os estilos padrão do slick se necessário
+.slick-prev,
+.slick-next {
+    display: none !important;
+}

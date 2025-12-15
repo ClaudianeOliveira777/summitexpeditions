@@ -1,0 +1,174 @@
+
+@use "../../styles/colors.scss" as colors;
+@use "../../styles/mixin-layout.scss" as mixin;
+
+.transparent-header{
+    
+    position: absolute;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    
+    z-index: 1000;
+
+}
+
+.logo{
+    @include mixin.responsive(mobile){
+        margin: 0 auto;
+    }
+
+    img{
+        width: 180px;
+    }
+}
+
+.nav-desktop{
+    z-index: 1000;
+}
+
+.nav-desktop a{
+   
+
+   font-size: 18px;
+   font-weight: 500;
+   padding-right: 20px;
+   margin-right: 20px;
+   text-shadow: colors.$text-shadow-light;
+
+   @include mixin.responsive(mobile){
+    display: none;
+   }
+
+}
+
+
+
+.submenuDesktop{
+    position: absolute;
+    padding-top: 10px;
+    display: none;
+
+    li{
+        list-style: none;
+        padding-top: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.95);
+        font-size: 20px;
+    }
+    
+}
+
+.submenuDesktop.open{
+    display: flex;
+    flex-direction: column;
+}
+
+.hamburguer{
+    display: none;
+
+    @include mixin.responsive(mobile){
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: absolute;
+        cursor: pointer;
+        z-index: 1001;
+        
+        left: 20px;
+        
+
+    }
+}
+
+.hamburguer span{
+    height: 3px;
+    width: 28px;
+    border-radius: 2px;
+    background: colors.$grey-green;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+    transition: all 0.3s ease; /*animation*/
+}
+
+.hamburguer.open{
+    border: 1px solid red;
+}
+
+.expeditions-mobile-btn{
+    background-color: transparent;
+    border: none;
+    color: colors.$white-medium;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+
+    padding-top: 10px;
+
+     &:hover{
+        color: colors.$dark-orange;
+    }
+}
+
+.nav-mobile{
+    display: none;
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+    padding: 50px 20px;
+    z-index: 100; // ← GARANTIR que está alto
+
+    //background-color:  #57b5d5;
+    background: linear-gradient(
+    180deg,
+    #153a63 0%,
+    #1a4b7a 100%
+  );
+
+   
+
+    li{
+        padding-top: 12px;
+    }
+}
+
+.nav-mobile.open{
+    display: flex;
+
+   
+    
+}
+
+.submenuMobile{
+   display: none;
+   padding: 7px;
+
+   li{
+    padding: 5px;
+   }
+}
+
+.submenuMobile.open{
+ display: flex;
+ flex-direction: column;
+}
+
+
+/*Animação hamburguer*/
+.hamburguer.open span:nth-child(1){
+    transform: rotate(50deg) translate(5px, 5px);
+}
+
+.hamburguer.open span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburguer.open span:nth-child(3){
+    transform: rotate(-45deg) translate(5px, -5px);
+}

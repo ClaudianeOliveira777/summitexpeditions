@@ -1,0 +1,59 @@
+
+@use "./colors.scss" as colors;
+
+$container-desktop: 1280px;
+$container-tablet: 768px;
+$container-mobile: 360px;
+
+@mixin responsive($device){
+    @if $device == desktop{
+        @media screen and (min-width: $container-desktop){
+            @content;
+        }
+    }
+
+    @else if $device == tablet {
+        @media screen and (min-width: $container-tablet) and (max-width: #{$container-desktop - 1}){
+            @content;
+        }
+    }
+
+    @else if $device == mobile{
+        @media screen and (min-width: $container-mobile) and (max-width: #{$container-tablet - 1}){
+            @content;
+        }
+    }
+}
+
+.container{
+    width: 100%;
+    max-width: $container-desktop;
+    margin: 0 auto;
+    padding: 16px;
+
+    @include responsive(mobile){
+        max-width: $container-mobile;
+    }
+}
+
+.btn-custom{
+    border: none;
+    background: colors.$btn-color;
+    color: colors.$white-medium;
+    width: 250px;
+    height: 57px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover{
+        background: colors.$btn-color-hover;
+        transform: translateX(5px);
+    }
+
+}

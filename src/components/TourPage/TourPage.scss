@@ -1,0 +1,174 @@
+@use "../../styles/mixin-layout.scss" as mixin;
+@use "../../styles/colors.scss" as colors;
+
+.expedition-hero{
+    position: relative;
+    height: 70vh;
+}
+
+.expedition-hero img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.expedition-overlay{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+
+.expedition-name{
+    text-shadow: colors.$text-shadow-strong;
+    letter-spacing: 2px;
+}
+
+.expedition-descp{
+  color: colors.$white-light;
+  text-shadow: colors.$text-shadow-strong;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.expedition-grid{
+    padding-left: 40px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 40px;
+
+    align-items: start;
+}
+
+.expedition-resume,
+.itinerary,
+.contact-form{
+    grid-column: 1;
+}
+
+.expedition-resume{
+    padding-top: 40px;
+    max-width: 1000px;
+    
+
+    p{
+        padding-top: 20px;
+    }
+}
+
+.itinerary{
+    margin-top: 40px;
+
+    h2{
+        padding-bottom: 20px;
+    }
+}
+
+.itinerary li{
+    font-size: 21px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2.0;
+    
+    list-style: none;
+}
+
+.note{
+    font-size: 20px;
+    color: colors.$gray-medium;
+    font-style: italic;
+    padding-top: 20px;
+    max-width: 1000px;
+}
+
+.contact-form{
+    margin-top: 40px;
+    max-width: 600px;
+    margin-left: 40px;
+}
+
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+    padding: 12px;
+    border: 1px solid colors.$grey-green;
+    font-size: 16px;
+}
+
+.radio-group label{
+    margin-right: 20px;
+}
+
+.inq-button-container{
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.inq-button{
+    width: 400px !important;
+}
+
+aside{
+    width: 390px;
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 50px;
+    margin-right: 20px;
+    
+    @include mixin.responsive(mobile){
+        grid-column: 1;
+        max-width: 360px;
+   
+    padding-right: 30px ;
+   
+    }
+    
+}
+
+.visa-box{
+    //background-color: wheat;
+   
+background: linear-gradient(
+  180deg,
+  #f5f6fa 0%,
+  #eceff6 100%
+);
+
+
+ 
+    padding: 16px;
+    border-radius: 5px;
+   
+
+
+    h3{
+        padding-bottom: 10px;
+    }
+
+    p{
+        font-weight: 400;
+    }
+
+   
+
+
+}
+
+.link-visa{
+    color: #004080;
+    text-decoration: underline;
+    padding-top: 16px;
+    display: inline-block;
+}
+
