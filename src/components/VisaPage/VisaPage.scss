@@ -21,11 +21,19 @@
     font-size: 52px;
     letter-spacing: 2px;
     text-shadow: colors.$text-shadow-strong;
+
+    @include mixin.responsive(mobile){
+        font-size: 40px;
+    }
 }
 
 .visa-overlay p{
     color: colors.$white-medium;
     font-size: 20px;
+
+    @include mixin.responsive(mobile){
+        font-size: 16px;
+    }
 }
 
 .visa-container{
@@ -33,7 +41,7 @@
     max-width: 900px; //1100
     padding: 40px;
     margin: 0 auto;
-    border: 1px solid red;
+   
 }
 
 .visa-form{

@@ -14,7 +14,9 @@
         font-size: 95px;
         font-weight: 400;    
     } @else if $size == h1 and $device == mobile{
-        font-size: 70px;
+        font-size: 54px;
+       
+        
     }
 
     @else if $size == h2 and $device == desktop{

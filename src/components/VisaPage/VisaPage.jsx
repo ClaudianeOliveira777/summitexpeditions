@@ -68,7 +68,7 @@ const VisaPage = () => {
         <div className="visa-overlay">
         <div className="visa-content">
         <h1>Visa Requirements</h1>
-        <p>Plan your journey with confidence</p>
+        <p>Need a visa? Choose your passport and destination to check visa requirements and allowed length of stay.</p>
         </div>
         </div>
         </div>

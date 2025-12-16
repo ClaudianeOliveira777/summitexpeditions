@@ -40,7 +40,7 @@
         z-index: -1;
     }
     
-    // Sombra sutil em todo o elemento
+   
     box-shadow: 0 5px 15px rgb(255, 251, 251);
     
     @include mixin.responsive(mobile) {
@@ -58,12 +58,22 @@
 
 .tour-title {
     letter-spacing: 5px; 
+    padding-top: 5px;
+    
+    white-space: nowrap;
 }
 
 .slide-caption {
     padding-left: 90px;
     position: relative;
     z-index: 2;
+    
+    @include mixin.responsive(mobile){
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    
+    }
 }
 
 .tour-title, 

@@ -93,9 +93,7 @@
     transition: all 0.3s ease; /*animation*/
 }
 
-.hamburguer.open{
-    border: 1px solid red;
-}
+
 
 .expeditions-mobile-btn{
     background-color: transparent;
@@ -148,9 +146,12 @@
 .submenuMobile{
    display: none;
    padding: 7px;
+   
+
+   
 
    li{
-    padding: 5px;
+    padding: 10px;
    }
 }
 
