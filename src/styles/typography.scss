@@ -11,7 +11,7 @@
 @mixin typeface-1($size, $device){
     @if $size == h1 and $device == desktop{
         font-family: 'Anton', sans-serif;
-        font-size: 95px;
+        font-size: 120px;
         font-weight: 400;    
     } @else if $size == h1 and $device == mobile{
         font-size: 54px;

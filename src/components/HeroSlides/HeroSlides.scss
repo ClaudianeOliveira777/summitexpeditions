@@ -25,34 +25,10 @@
     display: flex !important;
     align-items: center !important;
     position: relative !important;
-    
-    // Sombra apenas na parte inferior
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -20px;
-        left: 10%;
-        right: 10%;
-        height: 20px;
-        background: rgb(255, 255, 255);
-        border-radius: 50%;
-        filter: blur(15px);
-        z-index: -1;
-    }
-    
-   
-    box-shadow: 0 5px 15px rgb(255, 251, 251);
+
     
     @include mixin.responsive(mobile) {
         height: 55vh !important;
-        
-        &::after {
-            bottom: -15px;
-            left: 5%;
-            right: 5%;
-            height: 15px;
-            filter: blur(10px);
-        }
     }
 }
 

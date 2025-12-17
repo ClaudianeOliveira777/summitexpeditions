@@ -173,11 +173,7 @@ aside{
 .visa-box{
     //background-color: wheat;
    
-background: linear-gradient(
-  180deg,
-  #f5f6fa 0%,
-  #eceff6 100%
-);
+background: white;
 
 
  
@@ -206,3 +202,7 @@ background: linear-gradient(
     display: inline-block;
 }
 
+.loading{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+}

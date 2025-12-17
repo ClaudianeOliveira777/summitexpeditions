@@ -58,27 +58,34 @@
     padding-top: 20px;
 }
 
-.slide-indicators{
-    
+
+
+.slide-indicators {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
     position: absolute;
     bottom: 199px;
-    left: 45%;
+    left: 50%;
+    transform: translateX(-50%); // para centralizar melhor
+
+
+    top: 62vh;
+
 }
 
-.indicator{
-    width: 17px;
-    height: 17px;
+.indicator {
+    width: 15px;
+    height: 15px;
     background-color: rgba(255, 255, 255, 0.4);
     border: 2px solid white; 
     border-radius: 12px;
-    margin-right: 10px;
     cursor: pointer;    
+    transition: all 0.5s ease-in-out; // adiciona transição
 }
 
-.indicator.active{
-    background-color:#34495e; 
-    transform: scale(1.5);
+.indicator.active {
+    width: 45px; 
+    background-color:  #fff; 
+    transform: scale(1.2);
 }

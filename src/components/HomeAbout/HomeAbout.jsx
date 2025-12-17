@@ -88,12 +88,15 @@ const HomeAbout = () =>{
     <section className="about">
     <h2>About us</h2>
     <p>
-    We organize breathtaking winter expeditions to iconic mountains and icy wonders. 
-    At Winter Adventures, we are more than just a trekking and adventure company—we are 
-    a team of passionate explorers, expert guides, and experienced Sherpas dedicated to 
-    delivering authentic, safe, and unforgettable journeys. Whether you seek the thrill 
-    of high-altitude trekking, mountaineering, or cultural immersion, we ensure every 
-    step of your adventure is meaningful and rewarding.
+    Since 2015, Summit Expeditions has guided over 5,000 adventurers to the world's 
+most challenging peaks. We are not just tour operators, we are climbers who've summited 
+Everest 47 times, Sherpas who know every crevasse by heart, and guides who believe 
+the journey matters as much as the summit.
+
+From your first training hike to standing at base camp, we handle logistics, safety, 
+and acclimatization so you can focus on the experience. Our 15 professional guides 
+average 12+ years of high-altitude experience, and our success rate speaks for 
+itself: 96% of our clients reach their goal.
     </p>
     </section>
 
